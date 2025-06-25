@@ -10,8 +10,8 @@ Just double-click the `main.py` file.
 ## Requirements
 1. Pre-installed version of python
 
-  ```cmd
-  @REM Check Version Of Python
+  ```bash
+  # Check Version Of Python
   python --version
   ```
 
