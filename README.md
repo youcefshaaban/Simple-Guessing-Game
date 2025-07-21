@@ -1,19 +1,43 @@
-# Simple Guessing Game
+# 🎮 GUI Number Guessing Game
 
-My first attempt to code a GUI
+Welcome to my **first ever GUI-based project**!  
+This is a simple Number Guessing Game built with **Python** using **Tkinter** and following **Object-Oriented Programming (OOP)** principles.
 
-A Simple GUI Guessing Game
+## 🚀 About the Project
 
-## How to use it?
-Just double-click the `main.py` file.
+This game is my first step into the world of graphical user interfaces (GUI) using Python.  
+I’ve always built CLI apps, but now I'm leveling up by learning how to make interactive applications that look and feel more user-friendly.
 
-## Requirements
-1. Pre-installed version of python
+> The main goal of this project was to practice:
+>
+> - Building a GUI with Tkinter
+> - Applying OOP concepts in Python
+> - Handling user input and basic game logic
 
-  ```bash
-  # Check Version Of Python
-  python --version
-  ```
+---
 
-## What Version of python is more recommended?
-I highly recommend using python 3.3.15 becuase the game was built on Python 3.3.15
+## 🕹️ How to Play
+
+- The program randomly selects a number from 1 to 20.
+- The user has a limited number of attempts to guess the number correctly.
+- Feedback is shown through popup messages (win/lose/tries left).
+
+---
+
+## 🚀 How to Run
+
+- On Windows:
+  - You Can Double Click on the main.py file, Make sure you have python installed
+  - Or You can Double Click on the main.exe file in the dist directory
+- On Linux, Mac:
+  - Open The Terminal and type in:
+    ```bash
+    python3 main.py
+    ```
+  - Make Sure Tkinter is installed, if not type in terminal:
+    ```bash
+    python3 -m venv .venv
+    source .venv/bin/activate
+    pip install tkinter
+    ```
+    Make sure that you are in the repository folder
