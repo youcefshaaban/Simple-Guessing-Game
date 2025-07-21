@@ -1,47 +1,40 @@
-# Importing Modules
 from tkinter import *
 from tkinter import messagebox
 import random
 
-# Functions
-def submiting(event=None):
-    global tries
-    if user_guess.get() == number:
-        messagebox.showinfo("Congrats 🎉", "You Won!")
-        exit(input("Press Enter to Exit..."))
-    else:
-        tries -= 1
-        messagebox.showwarning("Be Careful 😲", f"Wrong, You Have {tries} Tries Left")
-        user_guess.delete(0, END)
-    
-    if tries == 0:
-        messagebox.showerror("Sorry 😥", "You Have Lost :(")
-        exit()
+class Window:
 
-# Defining Variables
-number = str(random.randint(1, 20)) # Number Variable
-tries = 5 # Tries Variable
-root = Tk() # Main Variable
-warning = Label(root, text="Enter Number Only") # Warning Label
-user_guess = Entry() # Input Variable
-submit = Button(root, text="Submit", command=submiting)
+    def __init__(self, master):
 
-# PLacing Elements
-user_guess.pack(padx=20, pady=20)
-warning.pack(padx=20, pady=20)
-submit.pack(padx=20, pady=20)
 
-# Customizing Main Variable
-root.config(bg="#111")
-root.title("Simple Guess Game")
+        self.master = master
+        self.master.title("Simple Guessing Game")
+        self.master.config(bg="#111")
+        self.number = str(random.randint(1, 20))
+        self.tries = 5
+        self.user_guess = Entry()
+        self.btn = Button(master, text="Submit", command=self.submiting)
 
-# Customizing Elements
-user_guess.config(bg="#111", fg="#00FF00", font=("Cascadia Code", 20))
-warning.config(bg="#111", fg="#00FF00", font=("Cascadia Code", 20))
-submit.config(bg="#111", fg="#00FF00", font=("Cascadia Code", 20))
+        self.user_guess.config(bg="#111", fg="#00FF00", font=("Cascadia Code", 20))
+        self.btn.config(bg="#111", fg="#00FF00", font=("Cascadia Code", 20))
 
-# Binding The Enter Key To Submit
-root.bind("<Return>", submiting)
+        self.user_guess.pack(padx=20, pady=20)
+        self.btn.pack(padx=20, pady=20)
+        
+    def submiting(self, event=None):
+        if self.user_guess.get() == self.number:
+            messagebox.showinfo("Congrats 🎉", "You Won!")
+            exit(input("Press Enter to Exit..."))
+        else:
+            self.tries -= 1
+            messagebox.showwarning("Be Careful 😲", f"Wrong, You Have {self.tries} Tries Left")
+            self.user_guess.delete(0, END)
 
-# Mainloop
-root.mainloop()
+        if self.tries == 0:
+            messagebox.showerror("Sorry 😥", "You Have Lost :(")
+            exit()
+
+if __name__ == "__main__":
+    root = Tk()
+    window = Window(root)
+    root.mainloop()
