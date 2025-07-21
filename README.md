@@ -28,7 +28,6 @@ I’ve always built CLI apps, but now I'm leveling up by learning how to make in
 
 - On Windows:
   - You Can Double Click on the main.py file, Make sure you have python installed
-  - Or You can Double Click on the main.exe file in the dist directory
 - On Linux, Mac:
   - Open The Terminal and type in:
     ```bash
