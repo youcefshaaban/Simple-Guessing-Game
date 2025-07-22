@@ -24,7 +24,7 @@ class Window:
     def submiting(self, event=None):
         if self.user_guess.get() == self.number:
             messagebox.showinfo("Congrats 🎉", "You Won!")
-            exit(input("Press Enter to Exit..."))
+            exit()
         else:
             self.tries -= 1
             messagebox.showwarning("Be Careful 😲", f"Wrong, You Have {self.tries} Tries Left")
